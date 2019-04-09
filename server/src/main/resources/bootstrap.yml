@@ -1,0 +1,26 @@
+server:
+  port: 8889
+management:
+  server:
+    port: 8889
+    address: 127.0.0.1
+  endpoints:
+    web:
+      exposure:
+        include: health
+spring:
+  application:
+    name: consumer
+  output:
+    ansi:
+      enabled: DETECT
+  cloud:
+    consul:
+      discovery:
+        prefer-ip-address: true
+        serviceName: ${spring.application.name}
+        tags: version=1.0,author=linkzhang
+        instance-id: ${spring.application.name}:${spring.cloud.client.ipaddress}:${server.port}
+feign:
+  hystrix:
+    enabled: true

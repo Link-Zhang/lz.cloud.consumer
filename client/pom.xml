@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+
+    <modelVersion>4.0.0</modelVersion>
+
+    <artifactId>consumer-client</artifactId>
+    <version>1.0.0-Release</version>
+    <packaging>jar</packaging>
+
+    <name>consumer-client</name>
+    <description>Link Zhang's Spring Cloud Consumer Client</description>
+
+    <parent>
+        <artifactId>consumer</artifactId>
+        <groupId>cn.sh.lz</groupId>
+        <version>1.0.0-Release</version>
+    </parent>
+
+    <properties>
+        <consumer-common.version>1.0.0-Release</consumer-common.version>
+    </properties>
+
+    <dependencies>
+        <!--Spring Cloud OpenFeign-->
+        <dependency>
+            <groupId>org.springframework.cloud</groupId>
+            <artifactId>spring-cloud-starter-openfeign</artifactId>
+        </dependency>
+
+        <!--Spring Boot Web-->
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter-web</artifactId>
+        </dependency>
+
+        <!--Link Zhang Producer Common-->
+        <dependency>
+            <groupId>cn.sh.lz</groupId>
+            <artifactId>consumer-common</artifactId>
+            <version>${consumer-common.version}</version>
+        </dependency>
+    </dependencies>
+</project>
